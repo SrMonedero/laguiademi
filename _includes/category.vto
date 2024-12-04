@@ -8,6 +8,9 @@
 </head>
 <body class="bg-[#F0EFE7] min-h-screen">
     <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="mb-8">
+            <a href="/" class="text-[#6E9DEB] text-2xl">← Home</a>
+        </div>
         <h1 class="text-4xl font-bold text-center mb-8">{{ title }}</h1>
         <div class="max-w-4xl mx-auto px-4 text-4xl underline leading-snug text-[#6E9DEB]">
             {{ content }}
@@ -15,7 +18,9 @@
     </div>
     <script>
         document.querySelectorAll('a').forEach(link => {
-            link.setAttribute('target', '_blank');
+            if (link.getAttribute('href') !== '/') {
+                link.setAttribute('target', '_blank');
+            }
         });
     </script>
 </body>
