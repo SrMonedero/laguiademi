@@ -13,5 +13,10 @@
             {{ content }}
         </div>
     </div>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.setAttribute('target', '_blank');
+        });
+    </script>
 </body>
 </html>
