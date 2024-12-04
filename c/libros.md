@@ -1,0 +1,23 @@
+---
+layout: category.vto
+title: Libros / Música
+---
+- [Puerta 8 - Tienda de libros y obra gráfica](https://www.instagram.com/puerta_8/)
+- [Blackie Books - Editorial](https://www.blackiebooks.org/)
+- [Fatbottom Books - Librería gráfica](https://fatbottombooks.com/)
+- [Documenta - Librería de arte, literatura y humanidades](https://www.instagram.com/documentabcn/)
+- [Pebre Negre - Libros infantiles](https://www.pebrenegre.cat/)
+- [Llibreria Foster & Wallace (Vic)](https://www.llibreriafosterandwallace.cat/)
+- [Arpa editores - editorial/libros](https://arpaeditores.com/)
+- [Dosmanos - editorial](https://www.editorialdosmanos.com/)
+- [Libros de Guayama - libros editados en el Caribe](https://www.librosdeguayama.com/products)
+- [Alpha Decay - Editorial independiente en Barcelona](http://www.alphadecay.org)
+- [La Bella Varsovia - Editorial de poesía en Madrid](http://labellavarsovia.blogspot.com)
+- [Girly Girl mag - Libro](https://www.instagram.com/girlygirlmag/?hl=es)
+- [El genio equivocado - Sello discográfico y tienda](https://tiendaonline.elgenioequivocado.com/)
+- [B-Core - Sello discográfico y tienda](https://www.bcoredisc.com/)
+- [Solo Guitars - Guitarras hechas a mano sostenibles](https://sologuitars.es/)
+- [Tuus Exlibris - Exlibris personalizados](https://tuusexlibris.com/?lang=es)
+- [Ultra-Local Records - Tienda de discos](https://www.instagram.com/ultralocalrecords/)
+- [Fatbottom Books - Librería gráfica](https://www.instagram.com/fatbottombooks/)
+- [Terranova - Librería y editorial](https://www.instagram.com/terrranova/)
