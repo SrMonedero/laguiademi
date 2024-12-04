@@ -6,9 +6,13 @@
     <title>La Guia de Mi</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center mb-8">La Guía De Mi</h1>
+<body class="bg-[#F0EFE7] min-h-screen">
+    {{ if cover }}
+    <div class="max-w-lg mx-auto px-4 pt-8">
+        <img src="{{ cover }}" alt="Cover" class="w-full h-auto contain">
+    </div>
+    {{ /if }}
+    <div class="max-w-lg mx-auto px-4 text-4xl underline leading-snug text-[#6E9DEB]">
         {{ content }}
     </div>
 </body>

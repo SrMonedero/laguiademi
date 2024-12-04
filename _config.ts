@@ -7,6 +7,7 @@ import favicon from "lume/plugins/favicon.ts";
 const site = lume();
 
 site
+    .copy("static")
     .use(favicon({
         input: "favicon.png",
     }))

@@ -1,5 +1,6 @@
 ---
 layout: index.vto
+cover: /static/cover.jpg
 ---
 - [Arte / Obra gráfica](/c/arte)
 - [Cerámica / Gastronomía](/c/ceramica)
