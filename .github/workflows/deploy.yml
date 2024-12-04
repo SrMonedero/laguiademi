@@ -1,12 +1,11 @@
-name: Deploy to Deno Deploy
+name: Publish on Deno Deploy
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -14,12 +13,10 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
+      - name: Setup Deno environment
+        uses: denoland/setup-deno@v2
 
       - name: Build site
         run: deno task build
@@ -27,5 +24,6 @@ jobs:
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: laguiademi # Replace with your Deno Deploy project name
-          entrypoint: server.ts
+          project: laguiademi
+          import-map: "./deno.json"
+          entrypoint: serve.ts
