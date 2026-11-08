@@ -1,27 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body class="bg-[#F0EFE7] min-h-screen font-serif">
-    <div class="max-w-4xl mx-auto px-4 py-8">
-        <div class="mb-8">
-            <a href="/" class="text-[#6E9DEB] text-2xl">← Home</a>
-        </div>
-        <h1 class="text-4xl font-bold text-center mb-8">{{ title }}</h1>
-        <div class="max-w-4xl mx-auto px-4 text-4xl underline leading-snug text-[#6E9DEB]">
-            {{ content }}
-        </div>
-    </div>
-    <script>
-        document.querySelectorAll('a').forEach(link => {
-            if (link.getAttribute('href') !== '/') {
-                link.setAttribute('target', '_blank');
-            }
-        });
-    </script>
-</body>
-</html>
+---
+layout: base.vto
+---
+{{ set i = categories.findIndex((c) => c.url === url) }}
+{{ set cat = categories[i] }}
+{{ set prev = categories[(i - 1 + categories.length) % categories.length] }}
+{{ set next = categories[(i + 1) % categories.length] }}
+<div class="page" style="--accent: var(--accent-{{ i % 4 }})">
+  <nav class="topbar" aria-label="Navegación">
+    <a href="/" class="brand">guía de mi</a>
+    <a href="/" class="kicker">← Índice</a>
+  </nav>
+
+  <header class="cat-head">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>{{ cat.number }} / {{ categories.length }}</p>
+    <h1>{{ cat.title }}</h1>
+    <p class="kicker">{{ cat.items.length }} direcciones</p>
+  </header>
+
+  <ul class="shops">
+    {{ for item of cat.items }}
+    <li>
+      <a href="{{ item.url }}" target="_blank" rel="noopener">
+        <span class="shop-name">{{ item.name }}</span>
+        {{ if item.description }}<span class="shop-desc">{{ item.description }}</span>{{ /if }}
+        <span class="shop-source">{{ item.source }} <span aria-hidden="true">↗</span></span>
+      </a>
+    </li>
+    {{ /for }}
+  </ul>
+
+  <nav class="pager" aria-label="Otras categorías">
+    <a href="{{ prev.url }}" class="pager-prev">
+      <span class="kicker">← Anterior</span>
+      <span class="pager-title">{{ prev.title }}</span>
+    </a>
+    <a href="{{ next.url }}" class="pager-next">
+      <span class="kicker">Siguiente →</span>
+      <span class="pager-title">{{ next.title }}</span>
+    </a>
+  </nav>
+</div>

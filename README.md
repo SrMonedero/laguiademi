@@ -2,8 +2,8 @@
 
 This is a static site built with [Lume](https://lume.land/), using:
 - Deno
-- TailwindCSS
 - Vento template engine
+- Plain CSS (`styles.css`)
 
 ## Development
 
@@ -23,5 +23,7 @@ deno task build
 
 - `_config.ts`: Lume configuration file
 - `deno.json`: Deno configuration and tasks
-- `styles.css`: TailwindCSS styles
-- `index.vto`: Main page template
+- `styles.css`: site styles
+- `_data.ts`: category order; reads shops from `c/*.md`
+- `c/*.md`: one file per category, one `- [Name - description](url)` per shop
+- `_includes/`: page templates

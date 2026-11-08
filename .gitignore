@@ -48,3 +48,6 @@ pids
 .env.test.local
 .env.production.local
 .env.local
+
+# Lume cache
+_cache/

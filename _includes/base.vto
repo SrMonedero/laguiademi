@@ -1,0 +1,21 @@
+{{ set fullTitle = pageTitle || `${title} · Guía de mi` }}
+{{ set desc = description || `${title} en la Guía de mi: tiendas, marcas y talleres pequeños.` }}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ fullTitle }}</title>
+  <meta name="description" content="{{ desc }}">
+  <meta name="theme-color" content="#F0EFE7">
+  <meta property="og:title" content="{{ fullTitle }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:image" content="/static/cover.jpg">
+  <meta property="og:locale" content="es_ES">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  {{ content }}
+</body>
+</html>

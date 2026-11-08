@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Guia de Mi</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body class="bg-[#F0EFE7] min-h-screen font-serif">
-    {{ if cover }}
-    <div class="max-w-lg mx-auto px-4 pt-8">
-        <img src="{{ cover }}" alt="Cover" class="w-full h-auto contain">
+---
+layout: base.vto
+pageTitle: Guía de mi
+description: Tiendas, marcas y talleres pequeños, ordenados por categoría.
+---
+<main class="home">
+  <header class="home-cover">
+    <img src="{{ cover }}" alt="Guía de mi: collage con una concha, una mano, un jarrón y un cuaderno" width="1349" height="1687">
+  </header>
+
+  <section class="index" aria-labelledby="index-title">
+    <div class="index-head">
+      <h1 id="index-title" class="kicker">Índice</h1>
+      <p class="kicker">{{ categories.length }} categorías · {{ total }} direcciones</p>
     </div>
-    {{ /if }}
-    <div class="max-w-lg mx-auto px-4 text-4xl underline leading-snug text-[#6E9DEB]">
-        {{ content }}
-    </div>
-</body>
-</html>
+    <ol class="index-list">
+      {{ for cat of categories }}
+      <li>
+        <a href="{{ cat.url }}" style="--accent: var(--accent-{{ (cat.number - 1) % 4 }})">
+          <span class="index-number">{{ cat.number }}</span>
+          <span class="index-title">{{ cat.title }}</span>
+          <span class="index-count">{{ cat.items.length }}</span>
+        </a>
+      </li>
+      {{ /for }}
+    </ol>
+  </section>
+</main>
