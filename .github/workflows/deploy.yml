@@ -1,14 +1,14 @@
-name: Publish on Deno Deploy
+name: Publish on Cloudflare
 
 on:
   push:
     branches: main
+  workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: read
 
     steps:
@@ -21,9 +21,8 @@ jobs:
       - name: Build site
         run: deno task build
 
-      - name: Deploy to Deno Deploy
-        uses: denoland/deployctl@v1
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
         with:
-          project: laguiademi
-          import-map: "./deno.json"
-          entrypoint: serve.ts
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
