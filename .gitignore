@@ -51,3 +51,6 @@ pids
 
 # Lume cache
 _cache/
+
+# Wrangler
+.wrangler/
